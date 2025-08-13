@@ -58,7 +58,7 @@ export const DocumentAnalyse = () => {
       <aside className="w-72 rounded-tr-2xl rounded-br-2xl bg-[#0c1c11] text-white p-6 border-r border-green-700 flex flex-col shadow-lg">
         <div className="flex items-center gap-3 mb-10">
           <img src={logo} alt="Logo" className="w-10 h-10 rounded-lg" />
-          <h1 className="text-2xl font-bold">LegalDoc AI</h1>
+          <h1 className="text-2xl font-bold">ClauseWise</h1>
         </div>
 
         <h2 className="text-sm text-green-100 mb-3">Recent Documents</h2>
