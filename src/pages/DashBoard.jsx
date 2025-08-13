@@ -14,6 +14,7 @@ import img10 from "../assets/img10.png";
 import img11 from "../assets/img11.png";
 import img12 from "../assets/img12.png";
 import img13 from "../assets/templates.svg"
+import img14 from "../assets/court.jpeg";
 import vid from "../assets/Artificial.mp4"
 import { useNavigate } from 'react-router-dom';
 import { Plus } from "lucide-react";
@@ -246,12 +247,12 @@ File Your Complaint</li>
 
     {/* Hire Lawyer Button */}
     <div className="mt-6">
-      <a
-        href="/hire-lawyer"  // Replace with your actual route or external link
+      <button
+        onClick={()=>navigate("/hire-lawyer")}  // Replace with your actual route or external link
         className="inline-block bg-green-700 text-white px-5 py-2 rounded-full hover:bg-green-800 transition"
       >
         Hire Lawyer
-      </a>
+      </button>
     </div>
   </div>
 
@@ -268,7 +269,7 @@ File Your Complaint</li>
 
   </div>
 </section>
-<section className="bg-[#0c1c11] text-white py-20 px-6 md:px-16 border-b-1 border-gray-400">
+<section className="bg-[#0c1c11] text-white py-20 px-6 md:px-16 ">
   <div className="max-w-6xl mx-auto text-center mb-16">
     <span className="px-4 py-1 bg-green-200 text-green-800 text-sm font-semibold rounded-full">
       FEATURES
@@ -333,9 +334,10 @@ Designed for Real Legal Needs.    </p>
     </div>
   </div>
 </div>
-
-
 </section>
+
+
+
 <section className="bg-[#0d1b14] py-16">
   <h1 className="text-white text-center text-4xl md:text-6xl font-bold mb-36">
     Legal Collaborative Partners
@@ -420,6 +422,33 @@ One platform to search, reference, and validate legal documents relevant to your
         />
       </div>
     </section>
+
+      {/* Document  */}
+
+<section className="relative w-full">
+  {/* Background Image */}
+  <img
+    className="w-full h-[500px] object-cover"
+    src={img14}
+    alt="Document Analysis Background"
+  />
+
+  {/* Overlay */}
+  <div className="absolute inset-0 bg-black/50 flex flex-col items-center justify-center text-center px-4">
+    <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 drop-shadow-lg">
+      Analyse Your Legal Document
+    </h1>
+    <p className="text-lg md:text-xl text-gray-200 max-w-2xl mb-6 drop-shadow-md">
+      Upload a legal document to get instant, AI-powered insights and answers to your questions based strictly on the document content.
+    </p>
+    <button
+      className="px-8 py-3 bg-green-800 text-white rounded-full shadow-lg text-lg font-semibold hover:bg-green-700 transition"
+      onClick={() => navigate('/document-analyse')}
+    >
+      Analyse Document
+    </button>
+  </div>
+</section>
 
 <section className="flex flex-col md:flex-row bg-white min-h-screen px-10 py-20 items-center">
       <div className="flex-1 mb-10 md:mb-0">
