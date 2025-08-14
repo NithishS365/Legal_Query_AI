@@ -38,35 +38,35 @@ export default function Fir() {
         </h1>
         <form onSubmit={handleSubmit(onSubmit)} className="space-y-8">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <input {...register('fullName', { required: true })} placeholder="Full Name" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
-            <input {...register('fatherName', { required: true })} placeholder="Father's / Husband's Name" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
-            <select {...register('gender', { required: true })} className="border border-green-700 text-gray-400 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent">
+            <input {...register('fullName', { required: true })} placeholder="Full Name" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
+            <input {...register('fatherName', { required: true })} placeholder="Father's / Husband's Name" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
+            <select {...register('gender', { required: true })} className="border border-green-700 text-black gray-400 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent">
               <option value="">Select Gender</option>
               <option value="Male">Male</option>
               <option value="Female">Female</option>
               <option value="Other">Other</option>
             </select>
-            <input {...register('age', { required: true })} placeholder="Age" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
-            <input {...register('address', { required: true })} placeholder="Full Address" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 bg-transparent" />
-            <input {...register('phone', { required: true })} placeholder="Mobile Number" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
-            <input {...register('email', { required: true })} placeholder="Email ID" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
-            <input {...register('occupation', { required: true })} placeholder="Occupation / Place of Work" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 bg-transparent" />
+            <input {...register('age', { required: true })} placeholder="Age" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
+            <input {...register('address', { required: true })} placeholder="Full Address" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 bg-transparent" />
+            <input {...register('phone', { required: true })} placeholder="Mobile Number" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
+            <input {...register('email', { required: true })} placeholder="Email ID" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
+            <input {...register('occupation', { required: true })} placeholder="Occupation / Place of Work" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 bg-transparent" />
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <input {...register('date', { required: true })} type="date" className="border border-green-700 text-gray-400 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
-            <input {...register('time', { required: true })} type="time" placeholder='Time' className="border border-green-700 text-gray-400 rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
-            <input {...register('place', { required: true })} placeholder="Place of Occurrence" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 bg-transparent" />
-            <input {...register('district', { required: true })} placeholder="District" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
-            <input {...register('station', { required: true })} placeholder="Police Station" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
-            <input {...register('offenceType', { required: true })} placeholder="Offence Type" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 bg-transparent" />
-            <textarea {...register('offenceDetails', { required: true })} placeholder="Detailed Description of Offence" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 h-24 bg-transparent" />
-            <textarea {...register('accused', { required: true })} placeholder="Description of Accused (if known)" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 h-20 bg-transparent" />
-            <textarea {...register('property', { required: true })} placeholder="Details of Lost/Damaged Property (if any)" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 h-20 bg-transparent" />
-            <textarea {...register('witnesses')} placeholder="Witnesses (if any)" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 h-20 bg-transparent" />
+            <input {...register('date', { required: true })} type="date" className="border border-green-700 text-black rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
+            <input {...register('time', { required: true })} type="time" placeholder='Time' className="border border-green-700 text-black rounded-lg p-3 w-full focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
+            <input {...register('place', { required: true })} placeholder="Place of Occurrence" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 bg-transparent" />
+            <input {...register('district', { required: true })} placeholder="District" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
+            <input {...register('station', { required: true })} placeholder="Police Station" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 bg-transparent" />
+            <input {...register('offenceType', { required: true })} placeholder="Offence Type" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 bg-transparent" />
+            <textarea {...register('offenceDetails', { required: true })} placeholder="Detailed Description of Offence" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 h-24 bg-transparent" />
+            <textarea {...register('accused', { required: true })} placeholder="Description of Accused (if known)" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 h-20 bg-transparent" />
+            <textarea {...register('property', { required: true })} placeholder="Details of Lost/Damaged Property (if any)" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 h-20 bg-transparent" />
+            <textarea {...register('witnesses')} placeholder="Witnesses (if any)" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 col-span-2 h-20 bg-transparent" />
           </div>
 
-          <textarea {...register('statement', { required: true })} placeholder="Chronological Description of Incident" className="border border-green-700 text-white rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 h-28 bg-transparent" />
+          <textarea {...register('statement', { required: true })} placeholder="Chronological Description of Incident" className="border border-green-700 text-black rounded-lg p-3 w-full placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 h-28 bg-transparent" />
 
           <div className="flex items-start gap-3">
             <input {...register('declaration', { required: true })} type="checkbox" className="mt-1" />

@@ -25,63 +25,63 @@ import law22 from "../assets/law22.jpeg";
 import law23 from "../assets/law23.jpeg";
 import law24 from "../assets/law24.jpeg";
 
-
 export default function Lawyer() {
   const [searchTerm, setSearchTerm] = useState("");
   const [ratingFilter, setRatingFilter] = useState("");
   const [experienceFilter, setExperienceFilter] = useState("");
 
-  const lawyerImages = [law1, law2, law3, law4, law5, law6,law7, law8, law9, law10, 
-    law11, law12, law13, law14, law15, law16, law17, law18, law19, law20, law21, law22,
-    law23, law24];
+  const lawyerImages = [
+    law1, law2, law3, law4, law5, law6, law7, law8, law9, law10,
+    law11, law12, law13, law14, law15, law16, law17, law18, law19, law20,
+    law21, law22, law23, law24
+  ];
   const getRandomImage = () =>
     lawyerImages[Math.floor(Math.random() * lawyerImages.length)];
 
-const filteredLawyers = lawyersData.filter((lawyer) => {
-  const matchesSearch =
-    lawyer.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    lawyer.zone.toLowerCase().includes(searchTerm.toLowerCase());
+  const filteredLawyers = lawyersData.filter((lawyer) => {
+    const matchesSearch =
+      lawyer.category.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      lawyer.zone.toLowerCase().includes(searchTerm.toLowerCase());
 
-  const matchesRating =
-    ratingFilter === "" || lawyer.rating >= parseFloat(ratingFilter);
+    const matchesRating =
+      ratingFilter === "" || lawyer.rating >= parseFloat(ratingFilter);
 
-  // Clean & convert experience to number
-  const exp = parseInt(lawyer.experience.toString().replace(/[^0-9]/g, ""), 10);
+    const exp = parseInt(lawyer.experience.toString().replace(/[^0-9]/g, ""), 10);
 
-  const matchesExperience =
-    experienceFilter === "" ||
-    (experienceFilter === "0-5" && exp >= 0 && exp <= 5) ||
-    (experienceFilter === "5-10" && exp > 5 && exp <= 10) ||
-    (experienceFilter === "10+" && exp > 10);
+    const matchesExperience =
+      experienceFilter === "" ||
+      (experienceFilter === "0-5" && exp >= 0 && exp <= 5) ||
+      (experienceFilter === "5-10" && exp > 5 && exp <= 10) ||
+      (experienceFilter === "10+" && exp > 10);
 
-  return matchesSearch && matchesRating && matchesExperience;
-});
-
+    return matchesSearch && matchesRating && matchesExperience;
+  });
 
   return (
     <div
       className="min-h-screen p-6"
       style={{
-        background: "linear-gradient(135deg, #f0fff4, #d1fae5, #a7f3d0)",
+        background: "linear-gradient(135deg, #0a1f1a, #0f2e24)",
+        fontFamily: "'Poppins', sans-serif",
       }}
     >
       {/* Heading */}
-      <h1 className="text-4xl font-extrabold text-green-800 text-center mb-8 tracking-wide drop-shadow-lg">
+      <h1 className="text-4xl font-extrabold text-white text-center mb-8 tracking-wide drop-shadow-lg">
         Lawyers
       </h1>
 
       {/* Search & Filters */}
-      <div className="flex flex-col md:flex-row items-center gap-4 mb-8 justify-center">
+      <div className="flex flex-col md:flex-row items-center gap-4 mb-8 justify-center bg-white/5 p-4 rounded-xl backdrop-blur-md shadow-lg">
         <input
           type="text"
           placeholder="Search by category or zone..."
-          className="border border-green-500 rounded-lg px-4 py-2 w-full md:w-1/3 focus:outline-none focus:ring-2 focus:ring-green-600 shadow-sm bg-white"
+          className="border border-gray-600 rounded-lg px-4 py-2 w-full md:w-1/3 focus:outline-none focus:ring-2 focus:ring-white shadow-sm bg-white/10 text-white placeholder-gray-300"
           value={searchTerm}
           onChange={(e) => setSearchTerm(e.target.value)}
         />
 
         <select
-          className="border border-green-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600 shadow-sm bg-white"
+          className="border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white shadow-sm bg-white/10 text-white"
           value={ratingFilter}
           onChange={(e) => setRatingFilter(e.target.value)}
         >
@@ -92,7 +92,7 @@ const filteredLawyers = lawyersData.filter((lawyer) => {
         </select>
 
         <select
-          className="border border-green-500 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-green-600 shadow-sm bg-white"
+          className="border border-gray-600 rounded-lg px-4 py-2 focus:outline-none focus:ring-2 focus:ring-white shadow-sm bg-white/10 text-white"
           value={experienceFilter}
           onChange={(e) => setExperienceFilter(e.target.value)}
         >
@@ -108,7 +108,7 @@ const filteredLawyers = lawyersData.filter((lawyer) => {
         {filteredLawyers.map((lawyer, index) => (
           <div
             key={index}
-            className="bg-white rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:scale-105 border border-green-100"
+            className="bg-white/10 rounded-xl shadow-lg hover:shadow-yellow-400/30 transition-all duration-300 transform hover:scale-105 border border-gray-700 backdrop-blur-md"
           >
             {/* Image */}
             <img
@@ -118,31 +118,17 @@ const filteredLawyers = lawyersData.filter((lawyer) => {
             />
 
             {/* Details */}
-            <div className="p-4">
-              <h2 className="text-xl font-bold text-green-700 mb-2">
+            <div className="p-4 text-white">
+              <h2 className="text-xl font-bold text-white mb-2">
                 {lawyer.name}
               </h2>
-              <p className="text-gray-700">
-                <strong>Zone:</strong> {lawyer.zone}
-              </p>
-              <p className="text-gray-700">
-                <strong>Category:</strong> {lawyer.category}
-              </p>
-              <p className="text-gray-700">
-                <strong>Experience:</strong> {lawyer.experience} years
-              </p>
-              <p className="text-gray-700">
-                <strong>Rating:</strong> ⭐ {lawyer.rating}
-              </p>
-              <p className="text-gray-700">
-                <strong>Email:</strong> {lawyer.email}
-              </p>
-              <p className="text-gray-700">
-                <strong>Phone:</strong> {lawyer.phone}
-              </p>
-              <p className="text-gray-700">
-                <strong>Address:</strong> {lawyer.address}
-              </p>
+              <p><strong className="text-gray-300">Zone:</strong> {lawyer.zone}</p>
+              <p><strong className="text-gray-300">Category:</strong> {lawyer.category}</p>
+              <p><strong className="text-gray-300">Experience:</strong> {lawyer.experience} years</p>
+              <p><strong className="text-gray-300">Rating:</strong> ⭐ {lawyer.rating}</p>
+              <p><strong className="text-gray-300">Email:</strong> {lawyer.email}</p>
+              <p><strong className="text-gray-300">Phone:</strong> {lawyer.phone}</p>
+              <p><strong className="text-gray-300">Address:</strong> {lawyer.address}</p>
             </div>
           </div>
         ))}
@@ -150,7 +136,7 @@ const filteredLawyers = lawyersData.filter((lawyer) => {
 
       {/* No Results */}
       {filteredLawyers.length === 0 && (
-        <p className="text-center text-gray-500 mt-6">
+        <p className="text-center text-gray-400 mt-6">
           No lawyers match your search or filter.
         </p>
       )}
