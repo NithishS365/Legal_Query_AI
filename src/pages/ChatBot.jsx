@@ -2,8 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { SendHorizonal, Clock, Loader2, MessageCircle, Sparkles, Shield, User, Bot, Upload, Search } from 'lucide-react';
 import logo from '../assets/logo.png';
 import { apiClient, handleAPIError } from '../config/api';
-import { analytics } from '../config/firebase';
-import { logEvent } from 'firebase/analytics';
+
 
 export const ChatBot = () => {
   const [input, setInput] = useState('');
