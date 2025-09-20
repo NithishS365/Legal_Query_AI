@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { SendHorizonal, Clock, Loader2, MessageCircle, Sparkles, Shield, User, Bot, Upload, Search } from 'lucide-react';
 import logo from '../assets/logo.png';
-import { apiClient, handleAPIError } from '../config/api';
+
 
 
 export const ChatBot = () => {
